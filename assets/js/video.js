@@ -25,10 +25,10 @@ function draw(){
     
     rectMode(CENTER);
     fill(0);
-    rect(200, 200, 400, 50)
+    rect(width/2, height-50, width, 50)
     textSize(32)
     fill(255)
     textAlign(CENTER, CENTER)
     noStroke();
-    text(label, 200, 200)
+    text(label, width/2, height-50)
 }
