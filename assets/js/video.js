@@ -13,7 +13,7 @@ function gotResults(results){
 }
 
 function setup(){
-    createCanvas(400, 400);
+    createCanvas(640, 480);
     video= createCapture(VIDEO)
     video.hide();
     classifier.classifyStart(video, gotResults);
