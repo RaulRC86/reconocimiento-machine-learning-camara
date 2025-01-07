@@ -31,4 +31,9 @@ function draw(){
     textAlign(CENTER, CENTER)
     noStroke();
     text(label, width/2, height-50)
+
+    if(label==="lemon"){
+        background(255, 255, 0, 100);
+    } else if (label ==="cello, violoncello") {background(0, 0, 0, 100);
+    }
 }
