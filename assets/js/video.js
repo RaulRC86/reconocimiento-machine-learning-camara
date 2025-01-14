@@ -3,7 +3,7 @@ let video;
 let label;
 
 function preload() {
-    classifier = ml5.imageClassifier("MobileNet");
+    classifier = ml5.imageClassifier("MobileNet"), {flipped: true};
 }
 
 function gotResults(results) {
@@ -12,7 +12,7 @@ function gotResults(results) {
 
 function setup() {
     createCanvas(640, 480);
-    video = createCapture(VIDEO);
+    video = createCapture(VIDEO, {flipped: true});
     video.hide();
     classifier.classifyStart(video, gotResults);
 }
@@ -20,14 +20,7 @@ function setup() {
 function draw() {
     background(220);
     
-    // Invertir el video horizontalmente
-    translate(width, 0); // Mover el origen al borde derecho
-    scale(-1, 1);       // Escalar en el eje X negativamente
-    
     image(video, 0, 0, width, height);
-
-    // Volver a la orientación normal para los gráficos siguientes
-    resetMatrix();
 
     rectMode(CENTER);
     fill(0);
