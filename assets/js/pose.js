@@ -1,3 +1,4 @@
+
 let video;
 
 let bodyPose;
@@ -5,7 +6,7 @@ let bodyPose;
 let poses = [];
 
 function preload(){
-    bodyPose = ml5.bodyPose("MoveNet");
+    bodyPose = ml5.bodyPose("MoveNet", {flipped: true});
 }
 
 function mousePressed(){
@@ -25,4 +26,12 @@ function setup() {
 
 function draw(){
     image(video, 0, 0)
+
+    if(poses.length>0){
+        let pose = poses[0];
+        let x =  pose.right_wrist.x;
+        let y = pose.right_wrist.y;
+        fill(255);
+        circle(x, y, 50);
+    }
 } 
